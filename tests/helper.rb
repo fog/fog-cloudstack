@@ -1,4 +1,4 @@
-require File.expand_path('../../lib/fog/cloudstack', __FILE__)
+require 'fog/cloudstack'
 
 Bundler.require(:test)
 

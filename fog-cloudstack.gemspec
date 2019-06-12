@@ -1,12 +1,12 @@
 # coding: utf-8
-lib = File.expand_path("../lib", __FILE__)
+lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "fog/cloudstack/version"
+require 'fog/cloudstack/version'
 
 Gem::Specification.new do |spec|
   spec.name        = 'fog-cloudstack'
   spec.version     = Fog::Cloudstack::VERSION
-  spec.authors     = ['cloud.ca", "geemus (Wesley Beary)']
+  spec.authors     = ['cloud.ca', 'geemus (Wesley Beary)']
   spec.email       = ['infra@cloud.ca', 'geemus@gmail.com']
 
   spec.summary     = %q{Module for the 'fog' gem to support Cloudstack}
@@ -16,8 +16,8 @@ Gem::Specification.new do |spec|
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^test/})
-  spec.require_paths = ["lib"]
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ['lib']
 
   spec.required_ruby_version = '>=2.0.0'
 

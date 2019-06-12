@@ -1,4 +1,4 @@
-require "fog/schema/data_validator"
+require 'fog/schema/data_validator'
 
 # format related hackery
 # allows both true.is_a?(Fog::Boolean) and false.is_a?(Fog::Boolean)
