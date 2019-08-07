@@ -51,6 +51,9 @@ module Fog
           service_offering_cpu_speed = service_offering[:cpuspeed]
           service_offering_memory = service_offering[:cpumemory]
 
+          affinity_group_ids = options['affinity_group_ids']
+          affinity_group_names = options['affinity_group_names']
+
           identity = Fog::Cloudstack.uuid
           name = options['name'] || Fog::Cloudstack.uuid
           display_name = options['displayname'] || name
@@ -89,6 +92,8 @@ module Fog
             "name" => name,
             "displayname" => display_name,
             "account" => account_name,
+            "affinitygroupids" => affinity_group_ids,
+            "affinitygroupnames" => affinity_group_names,
             "domainid" => domain_id,
             "domain" => domain_name,
             "created" => Time.now.to_s,

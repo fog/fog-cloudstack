@@ -25,6 +25,8 @@ module Fog
         attribute :password_enabled,                        :aliases => 'passwordenabled'
         attribute :flavor_id,                               :aliases => ['serviceofferingid', :service_offering_id]
         attribute :flavor_name,                             :aliases => ['serviceofferingname', :service_offering_name]
+        attribute :affinity_group_ids,                      :aliases => 'affinitygroupids'
+        attribute :affinity_group_names,                    :aliases => 'affinitygroupnames'
         attribute :cpu_number,                              :aliases => 'cpunumber'
         attribute :cpu_speed,                               :aliases => 'cpuspeed'
         attribute :cpu_used,                                :aliases => 'cpuused'
@@ -133,6 +135,8 @@ module Fog
             'size'              => size,
           }
 
+          options.merge!('affinitygroupids' => affinity_group_ids) if affinity_group_ids
+          options.merge!('affinitygroupnames' => affinity_group_names) if affinity_group_names
           options.merge!('rootdisksize' => root_disk_size) if root_disk_size
           options.merge!('networkids' => network_ids) if network_ids
           options.merge!('securitygroupids' => security_group_ids) unless security_group_ids.empty?
